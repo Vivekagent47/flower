@@ -17,22 +17,22 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 const routes = [
   {
     label: "Home",
-    href: "",
+    href: "/",
     icon: HomeIcon,
   },
   {
     label: "Workflows",
-    href: "workflows",
+    href: "/workflows",
     icon: Layers2Icon,
   },
   {
     label: "Credentials",
-    href: "credentials",
+    href: "/credentials",
     icon: ShieldCheckIcon,
   },
   {
     label: "Billing",
-    href: "billing",
+    href: "/billing",
     icon: CoinsIcon,
   },
 ];
@@ -41,7 +41,7 @@ function DesktopSideBar() {
   const pathName = usePathname();
   const activeRoute =
     routes.find(
-      (route) => route.href.length > 0 && pathName.includes(route.href),
+      (route) => route.href.length > 1 && pathName.includes(route.href),
     ) || routes[0];
 
   return (
@@ -51,7 +51,7 @@ function DesktopSideBar() {
       </div>
 
       <div className="p-2">TODO CREDITS</div>
-      <div className="flex flex-col p-2">
+      <div className="flex flex-col gap-2 p-2">
         {routes.map((route) => (
           <Link
             key={route.href}

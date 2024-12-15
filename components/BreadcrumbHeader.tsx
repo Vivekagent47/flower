@@ -12,7 +12,8 @@ import {
 
 function BreadcrumbHeader() {
   const pathName = usePathname();
-  const paths = pathName === "/" ? [""] : pathName.split("/");
+  const paths =
+    pathName === "/" ? [""] : pathName.split("/").filter((v) => v !== "");
 
   return (
     <div className="flex-start flex items-center">
