@@ -20,6 +20,10 @@ export async function getWorkflowsForUser() {
   });
 }
 
+export async function getWokflowById(id: string, userId: string) {
+  return prisma.workflow.findUnique({ where: { id, userId } });
+}
+
 export async function createWorkflow(
   form: z.infer<typeof createWorkFlowShema>,
 ) {
